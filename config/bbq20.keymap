@@ -18,6 +18,28 @@
 
 
 / {
+
+behaviors {
+	hm0: homerow_mods_0 {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             tapping-term-ms = <200>;
+             bindings = <&mo &kp>;
+        };
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            bindings = <&out &kp>;
+        };
+        hm1: homerow_mods_1 {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             tapping-term-ms = <400>;
+             bindings = <&kp &mkp>;
+        };
+    };
+
     behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
@@ -44,28 +66,7 @@
             bindings = <&kp K_BACK>, <&kp ESC>;
         };
     };
-    behaviors {
-	hm0: homerow_mods_0 {
-             compatible = "zmk,behavior-hold-tap";
-             #binding-cells = <0>;
-             tapping-term-ms = <200>;
-             bindings = <&mo &kp>;
-        };
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <500>;
-            bindings = <&out &kp>;
-        };
-        hm1: homerow_mods_1 {
-             compatible = "zmk,behavior-hold-tap";
-             #binding-cells = <2>;
-             tapping-term-ms = <400>;
-             bindings = <&kp &mkp>;
-        };
-    };
-
-
+    
     keymap {
         compatible = "zmk,keymap";
 
