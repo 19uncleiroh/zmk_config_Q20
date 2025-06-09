@@ -62,8 +62,7 @@
 behaviors {
 	mt1: mod_tap_1 {
              compatible = "zmk,behavior-hold-tap";
-             #binding-cells = <1>;
-	     flavor = "hold-preferred";
+             #binding-cells = <0>;
              tapping-term-ms = <200>;
              bindings = <&mo &kp>;
         };
@@ -89,7 +88,7 @@ behaviors {
     &kp Q        &kp W      &kp E       &kp R     &kp T         &kp Y             &kp U            &kp I            &kp O            &kp P
     &kp A        &kp S      &kp D       &kp F     &kp G         &kp H             &kp J            &kp K            &kp L            &kp BSPC
     &td1	 &kp Z      &kp X       &kp C     &kp V         &kp B             &kp N            &mt MINUS M      &td2    	     &mt RSHFT ENTER
-    &kp LCTRL               &mt LALT LGUI                    &mt1 SYM SPACE                   	   &mt RALT RGUI    		     &kp RCTRL
+    &kp LCTRL               &mt LALT LGUI                    &mt1 SYM SPACE                   	   &mt RALT LGUI    		     &kp RCTRL
             >;
         };
 
