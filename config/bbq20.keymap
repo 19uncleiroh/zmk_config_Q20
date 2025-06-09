@@ -57,16 +57,14 @@
              tapping-term-ms = <400>;
              bindings = <&kp &mkp>;
         };
-    };
-
-behaviors {
-	mt1: mod_tap_1 {
+	hm2: homerow_mods_2 {
              compatible = "zmk,behavior-hold-tap";
-             #binding-cells = <0>;
-             tapping-term-ms = <200>;
+             #binding-cells = <2>;
+             tapping-term-ms = <400>;
              bindings = <&mo &kp>;
         };
-};
+    };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -88,7 +86,7 @@ behaviors {
     &kp Q        &kp W      &kp E       &kp R     &kp T         &kp Y             &kp U            &kp I            &kp O            &kp P
     &kp A        &kp S      &kp D       &kp F     &kp G         &kp H             &kp J            &kp K            &kp L            &kp BSPC
     &td1	 &kp Z      &kp X       &kp C     &kp V         &kp B             &kp N            &mt MINUS M      &td2    	     &mt RSHFT ENTER
-    &kp LCTRL               &mt LALT LGUI                    &mt1 SYM SPACE                   	   &mt RALT LGUI    		     &kp RCTRL
+    &kp LCTRL               &mt LALT LGUI                    &hm2 SYM SPACE                   	   &mt RALT LGUI    		     &kp RCTRL
             >;
         };
 
