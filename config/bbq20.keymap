@@ -26,6 +26,24 @@
             tapping-term-ms = <400>;
             bindings = <&mkp LCLK>, <&bt BT_CLR>;
         };
+	td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LSHFT>, <&kp CLCK>;
+        };
+	td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp COMMA>, <&kp DOT>;
+        };
+	td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp K_BACK>, <&kp ESC>;
+        };
     };
     behaviors {
         hm: homerow_mods {
@@ -33,6 +51,24 @@
             #binding-cells = <2>;
             tapping-term-ms = <500>;
             bindings = <&out &kp>;
+        };
+        hm1: homerow_mods_1 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            bindings = <&mo &kp>;
+        };
+        hm2: homerow_mods_2 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            bindings = <&kp &mkp>;
+        };
+        hm3: homerow_mods_3 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            bindings = <&mo &kp>;
         };
     };
 
@@ -51,12 +87,12 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 //        -----------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                          &mkp RCLK
-    &kp CLCK                &kp LGUI                            &mkp LCLK                          &mt ESC K_BACK                    &kp TAB
+                 &mo UPPER                                                                                          &mo SYM
+    &mkp LCLK 	  	       	        &mt PSCRN CLCK          &mkp LCLK		   	   &td3   		     	     &hm2 DEL RCLK
     &kp Q        &kp W      &kp E       &kp R     &kp T         &kp Y             &kp U            &kp I            &kp O            &kp P
     &kp A        &kp S      &kp D       &kp F     &kp G         &kp H             &kp J            &kp K            &kp L            &kp BSPC
-    &kp LSHFT    &kp Z      &kp X       &kp C     &kp V         &kp B             &kp N            &kp M            &kp SEMI         &kp ENTER
-    &kp LCTRL               &kp LALT                            &kp SPACE                          &tog SYM                          &tog UPPER
+    &td1	 &kp Z      &kp X       &kp C     &kp V         &kp B             &kp N            &mt MINUS M      &td2    	     &mt RSHFT ENTER
+    &kp LCTRL               &mt LALT LGUI                    &hm1 SYM SPACE                   	   &hm3 UPPER LGUI    		     &kp RCTRL
             >;
         };
 
@@ -64,12 +100,12 @@
         sym_layer {
 
             bindings = <        
-                 &kp C_VOL_UP                                                                                       &kp C_VOL_DN
-    &kp PSCRN               &kp C_AC_SEARCH                     &mkp LCLK                          &kp F5                            &kp F12 
+                 &tog SYM                                                                                           &tog UPPER
+    &kp TAB                 &kp PSCRN                    	&mkp LCLK                          &kp F5                            &kp F12 
     &kp HASH     &kp N1     &kp N2      &kp N3    &mt LBKT LPAR &mt RBKT RPAR     &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
-    &kp STAR     &kp N4     &kp N5      &kp N6    &kp SLASH     &kp COLON         &kp SEMI         &kp APOS         &kp DQT          &kp DEL
-    &kp LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK     &kp EXCL          &kp COMMA        &kp DOT          &kp C_MUTE       &kp ENTER
-    &kp LCTRL               &kp N0                              &kp SPACE                          &tog SYM                          &tog UPPER
+    &kp STAR     &kp N4     &kp N5      &kp N6    &kp SLASH     &kp COLON         &kp SEMI         &kp APOS         &kp DQT          &kp BSPC
+    &kp LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK     &kp EXCL          &kp COMMA        &kp DOT          &kp KP_EQUAL     &kp ENTER
+    &kp LCTRL               &kp N0                              &kp SPACE                          &kp LALT                          &kp LCTRL
             >;
         };
 
@@ -77,13 +113,12 @@
 
             bindings = <
                  &msc SCRL_UP                                                                                       &msc SCRL_DOWN
-    &bt BT_SEL 0            &bt BT_SEL 1                             &td0                           &bt BT_SEL 2                     &bt BT_SEL 3
-    &none        &kp UP     &none       &sys_reset &ext_power EP_TOG &none         &kp LT           &kp GT          &kp PIPE         &kp KP_EQUAL
-    &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
-    &kp LSHFT    &none      &none       &none      &bl BL_DEC        &bl BL_TOG    &bl BL_INC       &none           &bootloader      &kp ENTER
-    &kp LCTRL               &kp LALT                                 &hm OUT_TOG SPACE              &tog SYM                         &tog UPPER
+    &kp TAB            	    &bt BT_SEL 0                             &td0                           &bt BT_SEL 1                     &bt BT_SEL 2
+    &kp ESC      &kp UP     &kp F2      &kp F4     &kp F5            &kp F6        &kp F8           &kp F10         &kp F12	     &kp KP_EQUAL
+    &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp DEL
+    &kp LSHFT    &none      &none       &none      &bl BL_DEC        &bl BL_TOG    &bl BL_INC       &none           &bootloader      &kp C_VOL_UP
+    &kp LCTRL               &kp LALT                                 &hm OUT_TOG SPACE              &mo UPPER                        &kp C_VOL_DN
             >;
         };
     };
 };
-
