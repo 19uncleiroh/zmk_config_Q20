@@ -74,8 +74,8 @@ td4: tap_dance_4 {
     &mkp LCLK 	  	       	    		   &kp ESC           		   &hm1 CLCK LCLK		     &td3		   	   	&kp BSPC
     &mt TAB Q         &mt N1 W      &mt N2 E       &mt N3 R     &mt LPAR T         &mt RPAR Y      &mt UNDER U       &mt MINUS I     &mt PLUS O         &mt AT P
     &mt STAR A        &mt N4 S      &mt N5 D       &mt N6 F     &mt SLASH G        &mt COLON H     &mt SEMI J        &mt APOS K      &mt DQT L          &kp ENTER
-    &mt LSHFT TAB     &mt N7 Z      &mt N8 X       &mt N9 C     &mt QMARK V        &mt EXCL B      &mt COMMA N       &mt COMMA M     &mt DOT UP         &mt RSHFT MINUS
-    		      &mt LCTRL LEFT        	   &mt LALT RIGHT                  &mt LGUI SPACE                    &td4  	     &mt LCTRL DOWN
+    &mt LSHFT TAB     &mt N7 Z      &mt N8 X       &mt N9 C     &mt QMARK V        &mt EXCL B      &mt COMMA N       &mt EQUAL M     &mt UP COMMA       &mt RSHFT MINUS
+    		      &mt LCTRL LEFT        	   &mt LALT RIGHT                  &mt LGUI SPACE                    &td4  	     &mt DOWN DOT
             >;
         };
 
