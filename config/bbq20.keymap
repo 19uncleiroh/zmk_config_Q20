@@ -45,12 +45,6 @@ behaviors {
             tapping-term-ms = <400>;
             bindings = <&mkp LCLK>, <&bt BT_CLR>;
         };
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&kp LSHFT>, <&kp TAB>;
-        };
 	td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -80,17 +74,16 @@ td4: tap_dance_4 {
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 //        -----------------------------------------------------------------------------------------------------------------
 
-                 &tog UPPER                                                                                          &tog SYM
-    &mkp LCLK 	  	       	    		   &kp ESC           		   &hm1 CLCK LCLK		     &td3		   	   	&kp BSPC
+                      &tog UPPER                                                                                          &tog SYM
+    &kp ESC 	  	       	    		   &mkp LCLK           		   &hm1 CLCK LCLK		     &td3		   	   	&kp BSPC
     &mt TAB Q         &mt N1 W      &mt N2 E       &mt N3 R     &mt LPAR T         &mt RPAR Y      &mt UNDER U       &mt MINUS I     &mt PLUS O         &mt KP_EQUAL P
     &mt STAR A        &mt N4 S      &mt N5 D       &mt N6 F     &mt SLASH G        &mt COLON H     &mt SEMI J        &mt APOS K      &mt DQT L          &kp ENTER
-    &td1	      &mt N7 Z      &mt N8 X       &mt N9 C     &mt QMARK V        &mt EXCL B      &mt COMMA N       &mt DOT M       &kp COMMA          &mt LSHFT MINUS
-    		      &mt LCTRL LEFT        	   &mt LALT RIGHT                  &mt LGUI SPACE                    &td4  	     &kp DOT
-            >;
-        };
+    &mt LSHFT LEFT    &mt N7 Z      &mt N8 X       &mt N9 C     &mt QMARK V        &mt EXCL B      &mt COMMA N       &mt DOT M       &mt UP DOT         &mt LSHFT RIGHT
+    		      &mt LCTRL COMMA        	   &mt LALT N0              	   &mt LGUI SPACE                    &td4            &lt 1 DOWN            
+		>;
+	};
 
-
-        sym_layer {
+sym_layer {
 
             bindings = <        
                  &tog UPPER                                                                                          &tog SYM
