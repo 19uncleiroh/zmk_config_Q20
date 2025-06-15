@@ -72,8 +72,8 @@ behaviors {
     &kp ESC 	  	       	    		   &mkp LCLK           		   &hm1 CLCK LCLK		     &hm1 K_BACK RCLK		   	&kp DEL
     &mt TAB Q         &mt N1 W      &mt N2 E       &mt N3 R     &mt LPAR T         &mt RPAR Y      &mt UNDER U       &mt MINUS I     &mt PLUS O         &mt KP_EQUAL P
     &mt STAR A        &mt N4 S      &mt N5 D       &mt N6 F     &mt SLASH G        &mt COLON H     &mt SEMI J        &mt APOS K      &mt DQT L          &kp BSPC
-    &mt LSHFT LEFT    &mt N7 Z      &mt N8 X       &mt N9 C     &mt QMARK V        &mt EXCL B      &mt COMMA N       &mt DOT M       &mt UP DOT         &mt LSHFT ENTER
-    		      &mt LCTRL N0        	   &mt LALT COMMA              	   &mt LGUI SPACE                    &td4            &kp DOWN            
+    &mt LSHFT CLCK    &mt N7 Z      &mt N8 X       &mt N9 C     &mt QMARK V        &mt EXCL B      &mt LEFT N        &mt UP M        &mt RIGHT DOT      &mt LSHFT ENTER
+    		      &mt LCTRL N0        	   &mt LALT COMMA              	   &mt LGUI SPACE                    &mt DOWN DOT    &td4           
 		>;
 	};
 
